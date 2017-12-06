@@ -1,3 +1,19 @@
+rsync (3.1.1-3ubuntu1.1) xenial-security; urgency=medium
+
+  * SECURITY UPDATE: bypass intended access restrictions
+    - debian/patches/CVE-2017-17433.patch: check fname in
+      recv_files sooner in receiver.c.
+    - CVE-2017-17433
+  * SECURITY UPDATE: not check for fnamecmp filenames and
+    does not apply sanitize_paths
+    - debian/patches/CVE-2017-17434-part1.patch: check daemon
+      filter against fnamecmp in receiver.c.
+    - debian/patches/CVE-2017-17434-part2.patch: sanitize xname
+      in rsync.c.
+    - CVE-2017-17434
+
+ -- Leonidas S. Barbosa <leo.barbosa@canonical.com>  Wed, 06 Dec 2017 11:07:22 -0300
+
 rsync (3.1.1-3ubuntu1) xenial; urgency=medium
 
   * SECURITY UPDATE: incomplete fix for rsync path spoofing attack
