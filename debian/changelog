@@ -1,3 +1,17 @@
+rsync (3.1.1-3ubuntu1.2) xenial-security; urgency=medium
+
+  * SECURITY UPDATE: receive_xattr function does not check
+    for '\0' character allowing denial of service attacks
+    - debian/patches/CVE-2017-16548.patch: enforce trailing
+      \0 when receiving xattr values in xattrs.c.
+    - CVE-2017-16548
+  * SECURITY UPDATE: Allows remote attacker to bypass argument
+    - debian/patches/CVE-2018-5764.patch: Ignore --protect-args
+      when already sent by client in options.c.
+    - CVE-2018-5764
+
+ -- Leonidas S. Barbosa <leo.barbosa@canonical.com>  Thu, 18 Jan 2018 17:27:59 -0300
+
 rsync (3.1.1-3ubuntu1.1) xenial-security; urgency=medium
 
   * SECURITY UPDATE: bypass intended access restrictions
